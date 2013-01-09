@@ -92,19 +92,19 @@
 @btnBorder:                         #bbb;
 
 @btnPrimaryBackground:              @purple;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+@btnPrimaryBackgroundHighlight:     darken(@btnPrimaryBackground, 10%);
 
 @btnInfoBackground:                 @blue;
-@btnInfoBackgroundHighlight:        #2f96b4;
+@btnInfoBackgroundHighlight:        darken(@btnInfoBackground,5%);
 
 @btnSuccessBackground:              @green;
-@btnSuccessBackgroundHighlight:     #338033;
+@btnSuccessBackgroundHighlight:     darken(@btnSuccessBackground,5%);
 
-@btnWarningBackground:              lighten(@orange, 15%);
-@btnWarningBackgroundHighlight:     #DE8D0D;
+@btnWarningBackground:              @orange;
+@btnWarningBackgroundHighlight:     darken(@btnWarningBackground,5%);
 
 @btnDangerBackground:               @red;
-@btnDangerBackgroundHighlight:      #CF1200;
+@btnDangerBackgroundHighlight:      darken(@btnDangerBackground,5%);
 
 @btnInverseBackground:              #444;
 @btnInverseBackgroundHighlight:     @grayDarker;
