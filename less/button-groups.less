@@ -36,6 +36,9 @@
   position: relative;
   .border-radius(0);
 }
+.btn-group > .btn.dropdown-toggle {
+  margin-bottom: 2px;
+}
 .btn-group > .btn + .btn {
   margin-left: -1px;
 }
@@ -119,6 +122,8 @@
   }
   .btn-primary.dropdown-toggle {
     background-color: @btnPrimaryBackgroundHighlight;
+    border-bottom:solid 2px @btnPrimaryBackgroundHighlight;
+    margin-bottom: 0px;
     +.dropdown-menu {
       border-color: @btnPrimaryBackgroundHighlight;
     }
