@@ -119,41 +119,50 @@
   // Keep the hover's background when dropdown is open
   .btn.dropdown-toggle {
     background-color: @btnBackgroundHighlight;
+    margin-bottom: 0px;
+    border-bottom: solid 2px @btnBackgroundHighlight;
+    +.dropdown-menu {
+      border-color: @btnBackgroundHighlight;
+    }
   }
   .btn-primary.dropdown-toggle {
     background-color: @btnPrimaryBackgroundHighlight;
-    border-bottom:solid 2px @btnPrimaryBackgroundHighlight;
-    margin-bottom: 0px;
+    border-color:@btnPrimaryBackgroundHighlight;
     +.dropdown-menu {
       border-color: @btnPrimaryBackgroundHighlight;
     }
   }
   .btn-warning.dropdown-toggle {
     background-color: @btnWarningBackgroundHighlight;
+    border-color: @btnWarningBackgroundHighlight;
     +.dropdown-menu {
       border-color: @btnWarningBackgroundHighlight;
     }
   }
   .btn-danger.dropdown-toggle {
     background-color: @btnDangerBackgroundHighlight;
+    border-color: @btnDangerBackgroundHighlight;
     +.dropdown-menu {
       border-color: @btnDangerBackgroundHighlight;
     }
   }
   .btn-success.dropdown-toggle {
     background-color: @btnSuccessBackgroundHighlight;
+    border-color: @btnSuccessBackgroundHighlight;
     +.dropdown-menu {
       border-color: @btnSuccessBackgroundHighlight;
     }
   }
   .btn-info.dropdown-toggle {
     background-color: @btnInfoBackgroundHighlight;
+    border-color: @btnInfoBackgroundHighlight;
     +.dropdown-menu {
       border-color: @btnInfoBackgroundHighlight;
     }
   }
   .btn-inverse.dropdown-toggle {
     background-color: @btnInverseBackgroundHighlight;
+    border-color: @btnInverseBackgroundHighlight;
     +.dropdown-menu {
       border-color: @btnInverseBackgroundHighlight;
     }
