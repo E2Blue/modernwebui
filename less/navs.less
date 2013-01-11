@@ -305,7 +305,7 @@
 }
 .tabs-below > .nav-tabs > .active > a,
 .tabs-below > .nav-tabs > .active > a:hover {
-  border-color: transparent #ddd #ddd #ddd;
+  border-top:1px solid @accent;
 }
 
 // LEFT & RIGHT
@@ -331,15 +331,14 @@
 }
 .tabs-left > .nav-tabs > li > a {
   margin-right: -1px;
-  .border-radius(4px 0 0 4px);
 }
 .tabs-left > .nav-tabs > li > a:hover {
   border-color: @grayLighter #ddd @grayLighter @grayLighter;
 }
 .tabs-left > .nav-tabs .active > a,
 .tabs-left > .nav-tabs .active > a:hover {
-  border-color: #ddd transparent #ddd #ddd;
-  *border-right-color: @white;
+  border-right:1px solid @accent;
+  *border-right-color: @accent;
 }
 
 // Tabs on the right
@@ -350,15 +349,15 @@
 }
 .tabs-right > .nav-tabs > li > a {
   margin-left: -1px;
-  .border-radius(0 4px 4px 0);
+  padding-left: 12px;
 }
 .tabs-right > .nav-tabs > li > a:hover {
   border-color: @grayLighter @grayLighter @grayLighter #ddd;
 }
 .tabs-right > .nav-tabs .active > a,
 .tabs-right > .nav-tabs .active > a:hover {
-  border-color: #ddd #ddd #ddd transparent;
-  *border-left-color: @white;
+  border-left:1px solid @accent;
+  *border-left-color: @accent;
 }
 
 
