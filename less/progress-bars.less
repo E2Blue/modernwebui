@@ -72,6 +72,12 @@
   .background-size(40px 40px);
 }
 
+//dots that flow right to left
+.progress.active.indeterminate .bar {
+  #gradient > .indeterminate(@accent);
+  width:100%;
+}
+
 // Call animation for the active one
 .progress.active .bar {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
