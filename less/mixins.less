@@ -464,6 +464,12 @@
     background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
   }
   .indeterminate(@color: #555, @angle: 0deg) {
+    background-color: @color;
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.20, rgba(255,255,255,100)), color-stop(.20, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,100)), color-stop(.90, rgba(255,255,255,.15)), color-stop(.90, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,100) 20%, white 20%, white 50%, rgba(255,255,255,100) 50%, rgba(255,255,255,100) 90%, transparent 90%, transparent);
+    background-image: -moz-linear-gradient(@angle, rgba(255,255,255,100) 20%, transparent 20%, transparent 50%, rgba(255,255,255,100) 50%, rgba(255,255,255,100) 90%, transparent 90%, transparent);
+    background-image: -o-linear-gradient(@angle, rgba(255,255,255,100) 20%, transparent 20%, transparent 50%, rgba(255,255,255,100) 50%, rgba(255,255,255,100) 90%, transparent 90%, transparent);
+    background-image: linear-gradient(@angle, rgba(255,255,255,100) 20%, transparent 20%, transparent 50%, rgba(255,255,255,100) 50%, rgba(255,255,255,100) 90%, transparent 90%, transparent);
   }
 }
 // Reset filters for IE
