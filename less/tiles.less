@@ -8,13 +8,22 @@
 	width: 102px;
 	position: relative;
 
-	&.tile-wide {
+	&.tile-wide, &.tile-large {
 		width: 222px;
 	}
 
 	&.tile-small {
 		height: 42px;
 		width: 42px;
+	}
+
+	&.tile-large {
+		height: 222px;
+		>.tile-title {
+			font-size: 2em;
+			left:6px;
+			bottom: 6px;
+		}
 	}
 
 	> .tile-title {
