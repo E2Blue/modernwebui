@@ -2,8 +2,21 @@
 
 .tile {
 	background: @accent;
+	float: left;
+	margin: 0 0 18px 18px;
 	height: 102px;
+	width: 102px;
 	position: relative;
+
+	&.tile-wide {
+		width: 222px;
+	}
+
+	&.tile-small {
+		height: 42px;
+		width: 42px;
+	}
+
 	> .tile-title {
 		color: @white;
 		position:absolute;
@@ -12,5 +25,17 @@
 		font-size: 1em/;
 		line-height: 1.2em;
 		margin: 0;
+	}
+}
+
+/* groups made for containing tiles in various configurations */
+.tile-group {
+	/* essentially a tile sized group for containing four small tiles in a square */
+	&.tile-group-small {
+		float: left;
+		margin: 0;
+		height: 120px;
+		width: 120px;
+		position: relative;
 	}
 }
