@@ -20,10 +20,8 @@
 // Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {
   min-height: @navbarHeight;
-  padding-left:  20px;
   padding-right: 20px;
   background-color: white;
-  border: 1px solid @navbarBorder;
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -232,7 +230,7 @@
 .navbar .nav > li > a {
   float: none;
   // Vertically center the text given @navbarHeight
-  padding: ((@navbarHeight - @baseLineHeight) / 2) 15px ((@navbarHeight - @baseLineHeight) / 2);
+  padding: 15px (@navbarHeight - @baseLineHeight) 15px 0;
   color: @navbarLinkColor;
   text-decoration: none;
 }
