@@ -173,10 +173,10 @@
 .navbar-static-top .navbar-inner {
   border-width: 0 0 1px;
   .nav > .active > a,
-  .nav > .active > a:hover,
-  .nav > .active > a:focus {
+  .nav > a:hover,
+  .nav > a:focus {
     border-top:solid 5px @accent;
-    padding-top: ((@navbarHeight - @baseLineHeight) / 4)
+    padding-top: ((@navbarHeight - @baseLineHeight) / 2) - 5;
   }
 }
 .navbar-fixed-bottom .navbar-inner {
@@ -254,6 +254,14 @@
 .navbar .nav > .active > a:focus {
   color: @navbarLinkColorActive;
   text-decoration: none;
+}
+
+//links in fixed navbar
+.navbar-fixed-top .nav > li > a,
+.navbar-fixed-bottom .nav > li > a,
+.navbar-static-top .nav > li > a,
+.navbar-static-bottom .nav > li > a {
+  padding: ((@navbarHeight - @baseLineHeight) / 2) @navbar-nav-spacing / 2 ((@navbarHeight - @baseLineHeight) / 2);
 }
 
 // Navbar button for toggling navbar items in responsive layouts
