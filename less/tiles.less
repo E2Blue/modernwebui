@@ -1,50 +1,17 @@
-/* The tile system is based on 8 square tiles in a full width 24 column grid system. */
+//normal sized tiles
+.tile-row {
+	margin-left: -@tile-margin;
+	.clearfix();
 
-.tile {
-	background: @accent;
-	float: left;
-	margin: 0 0 18px 18px;
-	height: 102px;
-	width: 102px;
-	position: relative;
-
-	&.tile-wide, &.tile-large {
-		width: 222px;
-	}
-
-	&.tile-small {
-		height: 42px;
-		width: 42px;
-	}
-
-	&.tile-large {
-		height: 222px;
-		>.tile-title {
-			font-size: 2em;
-			left:6px;
-			bottom: 6px;
-		}
-	}
-
-	> .tile-title {
-		color: @white;
-		position:absolute;
-		bottom: 3px;
-		left: 3px;
-		font-size: 1em/;
-		line-height: 1.2em;
-		margin: 0;
-	}
-}
-
-/* groups made for containing tiles in various configurations */
-.tile-group {
-	/* essentially a tile sized group for containing four small tiles in a square */
-	&.tile-group-small {
+	.tile {
 		float: left;
-		margin: 0;
-		height: 120px;
-		width: 120px;
-		position: relative;
+		margin: 0 0 @tile-margin @tile-margin;
+		background-color: @accent;
+		width: @tile-dimension;
+		height: @tile-dimension;
+
+		&.wide {
+			width: @tile-dimension * 2;
+		}
 	}
 }
