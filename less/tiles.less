@@ -4,14 +4,54 @@
 	.clearfix();
 
 	.tile {
+		width: @tile-dimension - (@tile-padding * 2);
+		height: @tile-dimension - (@tile-padding * 2);
 		float: left;
 		margin: 0 0 @tile-margin @tile-margin;
+		padding: @tile-padding;
 		background-color: @accent;
-		width: @tile-dimension;
-		height: @tile-dimension;
+		position: relative;
+		overflow:hidden;
+		color: @white;
 
 		&.wide {
-			width: @tile-dimension * 2;
+			width: (@tile-dimension * 2)  - (@tile-padding * 2);
+		}
+
+		&:hover {
+			.tile-backside {
+				-webkit-transition: top 0.4s ease-in-out;
+			    -moz-transition: top 0.4s ease-in-out;
+			    -o-transition: top 0.4s ease-in-out;
+			    -ms-transition: top 0.4s ease-in-out;
+			    transition: top 0.4s ease-in-out;
+				top: 0px;
+			}
+		}
+
+		.tile-backside {
+			padding: @tile-padding;
+			background-color: @accentHighlight;
+			height: @tile-dimension - @tile-padding - @tile-margin;
+			position: absolute;
+			top: @tile-dimension;
+			left: 0;
+			-webkit-transition: top 0.4s ease-in-out;
+		    -moz-transition: top 0.4s ease-in-out;
+		    -o-transition: top 0.4s ease-in-out;
+		    -ms-transition: top 0.4s ease-in-out;
+		    transition: top 0.4s ease-in-out;
+		}
+
+		.tile-title {
+			font-size: 12px;
+			line-height: 0px;
+			color: @white;
+			position: absolute;
+			padding:0;
+			margin:0;
+			left:@tile-padding;
+			bottom: @tile-padding / 2;
 		}
 	}
 }
