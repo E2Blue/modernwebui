@@ -144,7 +144,7 @@
 .nav-pills > .active > a:hover,
 .nav-pills > li > a:hover {
   color: @white;
-  background: @accentHighlight;
+  background-color: @accentHighlight;
 }
 
 
@@ -384,11 +384,12 @@
 // Gray out text
 .nav > .disabled > a {
   color: @grayLight;
+  background: #eee;
 }
 // Nuke hover effects
 .nav > .disabled > a:hover {
   text-decoration: none;
-  background-color: transparent;
+  background-color: #eee;
   cursor: default;
   color: @grayLight;
 }
