@@ -1,5 +1,6 @@
 //normal sized tiles
-.tile-row {
+#tiles > .core(@gridRowWidth1200 + @tile-margin, 8, @tile-padding, @tile-margin);
+/*.tile-row {
 	margin-left: -@tile-margin;
 	.clearfix();
 
@@ -20,11 +21,7 @@
 
 		&:hover {
 			.tile-backside {
-				-webkit-transition: top 0.4s ease-in-out;
-			    -moz-transition: top 0.4s ease-in-out;
-			    -o-transition: top 0.4s ease-in-out;
-			    -ms-transition: top 0.4s ease-in-out;
-			    transition: top 0.4s ease-in-out;
+				.transition(top 0.4s ease-in-out);
 				top: 0px;
 			}
 		}
@@ -36,11 +33,7 @@
 			position: absolute;
 			top: @tile-dimension;
 			left: 0;
-			-webkit-transition: top 0.4s ease-in-out;
-		    -moz-transition: top 0.4s ease-in-out;
-		    -o-transition: top 0.4s ease-in-out;
-		    -ms-transition: top 0.4s ease-in-out;
-		    transition: top 0.4s ease-in-out;
+			.transition(top 0.4s ease-in-out);
 		}
 
 		.tile-title {
@@ -52,6 +45,23 @@
 			margin:0;
 			left:@tile-padding;
 			bottom: @tile-padding / 2;
+		}
+	}
+}*/
+
+#tiles {
+	.core(@rowWidth,@nmbrOfTiles,@tilePadding,@tileMargin) {
+		.tile-row {
+			margin-left: -@tileMargin;
+			.clearfix();
+			.tile {
+				width: (@rowWidth / @nmbrOfTiles) - (@tilePadding * 2) - @tileMargin;
+				height: (@rowWidth / @nmbrOfTiles) - (@tilePadding * 2) - @tileMargin;
+				padding: @tilePadding;
+				margin: 0 0 @tileMargin @tileMargin;
+				background-color: @accent;
+				float: left;
+			}
 		}
 	}
 }
