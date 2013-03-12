@@ -1,6 +1,38 @@
 //normal sized tiles 
 #tiles > .core(@gridRowWidth + @tile-margin, @tilenumber, @tile-padding, @tile-margin);
 
+//tablet tiles
+@media (max-width: 979px) { 
+	.tile-row {
+		margin-left: -1%;
+		.clearfix();
+		.tile {
+			width: 24%;
+			height: 0;
+			padding: 0 0 24% 0;
+			margin: 0 0 1% 1%;
+			background-color: @accent;
+			float: left;
+		}
+	}
+}
+
+//tiles in phone 
+@media (max-width: 480px){
+	.tile-row {
+		margin-left: -2%;
+		.clearfix();
+		.tile {
+			width: 48%;
+			height: 0;
+			padding: 0 0 48% 0;
+			margin: 0 0 2% 2%;
+			background-color: @accent;
+			float: left;
+		}
+	}
+}
+
 //desktop large sized tiles
 @media (min-width: 1200px){
 	#tiles > .core(@gridRowWidth1200 + @tile-margin-large, @tilenumber-large, @tile-padding-large, @tile-margin-large);
