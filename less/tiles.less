@@ -1,5 +1,11 @@
-//normal sized tiles
-#tiles > .core(@gridRowWidth1200 + @tile-margin, 8, @tile-padding, @tile-margin);
+//normal sized tiles 
+#tiles > .core(@gridRowWidth + @tile-margin, @tilenumber, @tile-padding, @tile-margin);
+
+//desktop large sized tiles
+@media (min-width: 1200px){
+	#tiles > .core(@gridRowWidth1200 + @tile-margin-large, @tilenumber-large, @tile-padding-large, @tile-margin-large);
+}
+
 /*.tile-row {
 	margin-left: -@tile-margin;
 	.clearfix();
