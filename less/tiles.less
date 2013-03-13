@@ -17,8 +17,16 @@
 }
 
 
-//normal sized tiles 
-#tiles > .core(@gridRowWidth + @tile-margin, @tilenumber, @tile-padding, @tile-margin);
+//normal sized tiles, uses 6 tiles in an unspecified container
+#tiles > .fluid-tile(6,@tile-tablet-margin,@tile-tablet-padding);
+
+//specialized
+.tile-row.four {
+	#tiles > .fluid-tile(4,@tile-tablet-margin,@tile-tablet-padding);
+}
+.tile-row.eight {
+	#tiles > .fluid-tile(8,@tile-tablet-margin,@tile-tablet-padding);	
+}
 
 //tablet tiles
 @media (max-width: 979px) { 
@@ -30,10 +38,43 @@
 	#tiles > .fluid(@tile-phone-amount,@tile-phone-margin,@tile-phone-padding);
 }
 
-//desktop large sized tiles
+//desktop large sized tiles, uses eight tile in an unspecified container
 @media (min-width: 1200px){
-	#tiles > .core(@gridRowWidth1200 + @tile-margin-large, @tilenumber-large, @tile-padding-large, @tile-margin-large);
+	#tiles > .fluid-tile(8,@tile-tablet-margin,@tile-tablet-padding);
 }
+
+
+//
+// Mixins for generating tiles
+//
+
+#tiles {
+	.fluid(@nmrOfTiles,@percentMargin,@percentPadding) {
+		.tile-row {
+			margin-left: -@percentMargin;
+			#tiles > .fluid-tile(@nmrOfTiles,@percentMargin,@percentPadding);
+		}
+	}
+
+	.fluid-tile(@nmrOfTiles,@percentMargin,@percentPadding) {
+		.tile {
+				width: 100 / @nmrOfTiles - @percentMargin;
+				height: 0;
+				padding: 0 0 (100 / @nmrOfTiles - @percentMargin) 0;
+				margin: 0 0 @percentMargin @percentMargin;
+				.tile-content {
+					width:100%;
+					height:100%;
+					box-sizing: border-box;
+					padding: @percentPadding;
+				}
+				&.double {
+					width: (100 / @nmrOfTiles - @percentMargin) * 2 + @percentMargin;
+				}
+			}
+	}
+}
+
 
 /*.tile-row {
 	margin-left: -@tile-margin;
@@ -74,39 +115,3 @@
 		}
 	}
 }*/
-
-#tiles {
-	.core(@rowWidth,@nmbrOfTiles,@tilePadding,@tileMargin) {
-		.tile-row {
-			margin-left: -@tileMargin;
-			.tile {
-				width: (@rowWidth / @nmbrOfTiles) - @tileMargin;
-				height: (@rowWidth / @nmbrOfTiles) - @tileMargin;
-				margin: 0 0 @tileMargin @tileMargin;
-				.tile-content {
-					width: (@rowWidth / @nmbrOfTiles) - (@tilePadding * 2) - @tileMargin;
-					height: (@rowWidth / @nmbrOfTiles) - (@tilePadding * 2) - @tileMargin;
-					padding: @tilePadding;
-				}
-			}
-		}
-	}
-
-	.fluid(@nmrOfTiles,@percentMargin,@percentPadding) {
-		.tile-row {
-			margin-left: -@percentMargin;
-			.tile {
-				width: 100 / @nmrOfTiles - @percentMargin;
-				height: 0;
-				padding: 0 0 (100 / @nmrOfTiles - @percentMargin) 0;
-				margin: 0 0 @percentMargin @percentMargin;
-				.tile-content {
-					width:100%;
-					height:100%;
-					box-sizing: border-box;
-					padding: @percentPadding;
-				}
-			}
-		}
-	}
-}
